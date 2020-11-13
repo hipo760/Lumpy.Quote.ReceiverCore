@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lumpy.Lib.Common" Version="2.1.0" />
+    <PackageReference Include="Lumpy.Lib.Messages" Version="1.2.0" />
+  </ItemGroup>
+
+</Project>

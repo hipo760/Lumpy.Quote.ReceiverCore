@@ -1,0 +1,24 @@
+{
+  "name": "lumpy.quote.receivercore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "release": {
+    "branches": [
+      "main",
+      "next"
+    ],
+    "plugins": [
+      "@semantic-release/changelog",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ],
+    "repositoryUrl": "https://github.com/hipo760/Lumpy.Quote.ReceiverCore.git",
+    "debug": "true"
+  }
+}
