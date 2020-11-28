@@ -3,8 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Htf.Schemas.V1.Fbs.Market;
-using Htf.Schemas.V1.Service.Quote;
+using Htf.Schemas.V1.Grpc.Service.Quote;
 using Lumpy.Lib.Common.Broker;
 using Serilog;
 
@@ -35,7 +34,7 @@ namespace Lumpy.Quote.ReceiverCore
         {
             _exchangeReceiverDict = 
                 exchangeList
-                .GroupBy(e => e.Name)
+                .GroupBy(e => e)
                 .Select(x => x.FirstOrDefault())
                 .Where(x=>x!=null)
                 .ToDictionary(e=>e.Name,e=>e);
