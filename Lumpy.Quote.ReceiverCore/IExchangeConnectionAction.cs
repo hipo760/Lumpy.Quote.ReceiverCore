@@ -9,16 +9,20 @@ using Lumpy.Lib.Common.Broker;
 
 namespace Lumpy.Quote.ReceiverCore
 {
-    public interface IExchangeDataFeed
+    public interface IExchangeSubscribeAction
     {
         public string ExchangeName { get; set; }
         public string ExchangeHost { get; set; }
+        public Task Subscribe(string symbol);
+        public Task Unsubscribe(string symbol);
         public QuoteSubscriptions Symbols { get; set; }
-        public ExchangeConnectStatus ExchangeConnectStatus { get; set; }
         public bool ContainSymbol(string symbol);
-        public Task Connect();  
-        public Task Close();
-        public Task Reconnect(TimeSpan interval);
-        public Task OnSymbolUpdate(QuoteSubscription quoteSub);
+    }
+    public interface IExchangeConnectionAction
+    {
+        public Task Connect();
+        public Task Disconnect();
+        public Task Reconnect();
+        public Task CheckConnection();
     }
 }

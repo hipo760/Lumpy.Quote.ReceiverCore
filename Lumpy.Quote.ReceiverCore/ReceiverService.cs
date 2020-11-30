@@ -25,24 +25,24 @@ namespace Lumpy.Quote.ReceiverCore
         {
             return Task.Run(() =>
             {
-                if (!_exchangeReceiverDict.ContainsKey(quoteSub.Exchange)) return;
+                //if (!_exchangeReceiverDict.ContainsKey(quoteSub.Exchange)) return;
                 QuoteSubscribeEvent.Publish(quoteSub);
             });
         }
 
         private void InitExchange(IEnumerable<IExchangeDataFeed> exchangeList)
         {
-            _exchangeReceiverDict = 
-                exchangeList
-                .GroupBy(e => e)
-                .Select(x => x.FirstOrDefault())
-                .Where(x=>x!=null)
-                .ToDictionary(e=>e.Name,e=>e);
+            //_exchangeReceiverDict = 
+            //    exchangeList
+            //    .GroupBy(e => e)
+            //    .Select(x => x.FirstOrDefault())
+            //    .Where(x=>x!=null)
+            //    .ToDictionary(e=>e.Name,e=>e);
 
-            foreach (var exFeed in _exchangeReceiverDict)
-            {
-                QuoteSubscribeEvent.Subscribe(o => exFeed.Value.OnSymbolUpdate(o));
-            }
+            //foreach (var exFeed in _exchangeReceiverDict)
+            //{
+            //    QuoteSubscribeEvent.Subscribe(o => exFeed.Value.OnSymbolUpdate(o));
+            //}
         }
 
 
