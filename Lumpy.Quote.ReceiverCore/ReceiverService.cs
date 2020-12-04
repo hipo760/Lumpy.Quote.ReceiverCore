@@ -12,10 +12,9 @@ namespace Lumpy.Quote.ReceiverCore
     public class ReceiverService
     {
         private ILogger _log;
-        private Dictionary<string, IExchangeDataFeed> _exchangeReceiverDict;
+        private Dictionary<string, ExchangeConnectionStateMachine> _exchangeReceiverDict;
         public DataEventBroker<QuoteSubscription> QuoteSubscribeEvent { get; set; }
-
-        public ReceiverService(ILogger log, IEnumerable<IExchangeDataFeed> exchangeList)
+        public ReceiverService(ILogger log, IEnumerable<ExchangeConnectionStateMachine> exchangeList)
         {
             _log = log;
             InitExchange(exchangeList);
@@ -30,7 +29,7 @@ namespace Lumpy.Quote.ReceiverCore
             });
         }
 
-        private void InitExchange(IEnumerable<IExchangeDataFeed> exchangeList)
+        private void InitExchange(IEnumerable<ExchangeConnectionStateMachine> exchangeList)
         {
             //_exchangeReceiverDict = 
             //    exchangeList
