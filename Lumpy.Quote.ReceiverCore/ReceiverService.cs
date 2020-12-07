@@ -20,6 +20,10 @@ namespace Lumpy.Quote.ReceiverCore
             InitExchange(exchangeList);
 
         }
+        
+        
+        
+        
         public Task AddExchangeSymbols(QuoteSubscription quoteSub)
         {
             return Task.Run(() =>
