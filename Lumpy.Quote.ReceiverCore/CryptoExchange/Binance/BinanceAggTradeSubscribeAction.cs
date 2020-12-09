@@ -12,7 +12,7 @@ namespace Lumpy.Quote.ReceiverCore.CryptoExchange.Binance
         //private readonly IQuoteConnectionAction _quoteConnectionAction;
          
         public Subject<QuoteSubscribeRequest> QuoteSubScriptionEvent { get; }
-        private readonly Dictionary<string, QuoteSubscribeState> _symbolSubsciptionDict;
+        //private readonly Dictionary<string, QuoteSubscribeState> _symbolSubsciptionDict;
         private static readonly object SymbolSubscriptionDictLock = new object();
 
         private readonly string _innerExchangeName;

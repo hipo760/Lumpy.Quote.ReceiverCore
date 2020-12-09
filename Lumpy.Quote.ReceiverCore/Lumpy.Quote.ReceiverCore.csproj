@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Lumpy.Lib.Common" Version="2.2.1" />
-    <PackageReference Include="Lumpy.Lib.Messages" Version="1.5.1" />
+    <PackageReference Include="Lumpy.Lib.Messages" Version="1.6.0" />
     <PackageReference Include="Stateless" Version="5.1.5" />
   </ItemGroup>
 
